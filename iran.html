@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ایران | سفری در تاریخ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gold: #d6ad55;
+    --gold-light: #f5d98b;
+    --dark: #090806;
+    --panel: #15120d;
+}
+
+body {
+    background: var(--dark);
+    color: #eee5d2;
+    font-family: 'Vazirmatn', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 50% 30%, #49331322, transparent 50%),
+    radial-gradient(circle at 10% 80%, #b17b2520, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: #090806dd;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #d6ad5530;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #c9c0ae;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 140px 10% 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: #b7832730;
+    filter: blur(120px);
+    border-radius: 50%;
+    left: 5%;
+    top: 15%;
+}
+
+.hero-content {
+    max-width: 550px;
+    position: relative;
+    z-index: 2;
+}
+
+.tag {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 82px);
+    line-height: 1.5;
+    color: var(--gold-light);
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #fff;
+}
+
+.hero p {
+    color: #aaa18e;
+    line-height: 2.4;
+    margin: 20px 0 30px;
+    font-size: 15px;
+}
+
+.gold-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(120deg, #a4772c, #f4d48a);
+    color: #171006;
+    font-weight: 800;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.gold-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px #c99b4040;
+}
+
+/* 3D PERSEPOLIS */
+
+.scene {
+    width: 390px;
+    height: 390px;
+    perspective: 1100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.orbit {
+    width: 310px;
+    height: 310px;
+    border: 1px solid #d6ad5580;
+    border-radius: 50%;
+    position: absolute;
+    transform: rotateX(68deg);
+    box-shadow: 0 0 35px #d6ad5520;
+}
+
+.orbit.two {
+    transform: rotateY(65deg);
+    border-color: #d6ad5530;
+}
+
+.sphere {
+    width: 285px;
+    height: 285px;
+    border-radius: 50%;
+    background:
+    radial-gradient(circle at 35% 25%, #e9c46b40, transparent 28%),
+    radial-gradient(circle at 50% 75%, #9b641b30, transparent 50%),
+    linear-gradient(140deg, #241a0a, #090806 70%);
+    border: 1px solid #d6ad5580;
+    box-shadow:
+    inset -20px -20px 55px #000,
+    inset 10px 10px 45px #d6ad5520,
+    0 0 70px #c18b3530;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotateY(-5deg); }
+    50% { transform: translateY(-15px) rotateY(5deg); }
+}
+
+.building {
+    position: absolute;
+    width: 210px;
+    height: 120px;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%,-50%) rotateX(8deg);
+    transform-style: preserve-3d;
+}
+
+.roof {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    width: 185px;
+    height: 18px;
+    background: linear-gradient(#f8d98a,#9d6b24);
+    transform: skewX(-10deg);
+    box-shadow: 0 4px 12px #000;
+}
+
+.columns {
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    width: 12px;
+    height: 77px;
+    background: linear-gradient(90deg,#704719,#f0cf79,#79501c);
+    border-radius: 3px 3px 0 0;
+    box-shadow: 4px 5px 8px #0008;
+    position: relative;
+}
+
+.column::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -4px;
+    width: 20px;
+    height: 8px;
+    background: #e7c16d;
+}
+
+.stairs {
+    position: absolute;
+    bottom: -28px;
+    left: 15px;
+    width: 180px;
+    height: 35px;
+    background: repeating-linear-gradient(
+    to bottom,
+    #e2bb69 0px,
+    #e2bb69 4px,
+    #60411d 5px,
+    #60411d 8px
+    );
+    clip-path: polygon(15% 0,85% 0,100% 100%,0 100%);
+}
+
+.sphere-label {
+    position: absolute;
+    bottom: -55px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/* GENERAL */
+
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title small {
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 37px;
+    margin: 12px 0;
+    color: var(--gold-light);
+}
+
+.section-title p {
+    color: #888;
+    font-size: 13px;
+}
+
+/* INTRO */
+
+.intro {
+    background: linear-gradient(180deg, transparent, #171109, transparent);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.intro img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #c99b4050;
+    box-shadow: 0 15px 50px #000;
+}
+
+.intro-text h3 {
+    color: var(--gold);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    color: #aaa18e;
+    line-height: 2.5;
+    font-size: 14px;
+}
+
+/* TIMELINE */
+
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(transparent,var(--gold),var(--gold),transparent);
+}
+
+.era {
+    position: relative;
+    padding: 0 55px 65px 0;
+}
+
+.era::before {
+    content: "";
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 4px solid #171109;
+    box-shadow: 0 0 15px var(--gold);
+}
+
+.era-card {
+    background: linear-gradient(130deg,#1c170e,#100e0a);
+    border: 1px solid #b78a3d35;
+    padding: 30px;
+    border-radius: 9px;
+    transition: .4s;
+}
+
+.era-card:hover {
+    transform: translateX(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px #0008;
+}
+
+.era-date {
+    color: var(--gold);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.era-card h3 {
+    color: #f3d99e;
+    font-size: 22px;
+    margin-bottom: 13px;
+}
+
+.era-card p {
+    color: #aaa18e;
+    line-height: 2.3;
+    font-size: 14px;
+}
+
+.era-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* MONUMENTS */
+
+.monuments {
+    background: #100d08;
+}
+
+.monument-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.monument {
+    background: #1b160d;
+    border: 1px solid #b78a3d35;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.monument:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.monument img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.monument-content {
+    padding: 22px;
+}
+
+.monument h3 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.monument p {
+    color: #999;
+    line-height: 2;
+    font-size: 13px;
+}
+
+/* PRESENT */
+
+.present {
+    text-align: center;
+    background: radial-gradient(ellipse,#38271350,transparent 70%);
+}
+
+.present h2 {
+    color: var(--gold-light);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.present p {
+    color: #aaa18e;
+    max-width: 750px;
+    line-height: 2.6;
+    margin: auto;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid #d6ad5530;
+    color: #8e8065;
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+@media(max-width:850px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 70px;
+    }
+
+    .scene {
+        transform: scale(.85);
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .monument-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+}
+
+@media(max-width:550px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav a:nth-child(2),
+    nav a:nth-child(3) {
+        display: none;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .monument-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scene {
+        transform: scale(.75);
+        margin: -30px 0;
+    }
+
+    .era {
+        padding-right: 40px;
+    }
+
+    .era-card {
+        padding: 20px;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ایران | IRAN</div>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#history">تاریخ ایران</a>
+        <a href="#monuments">آثار تاریخی</a>
+        <a href="#today">ایران امروز</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <div class="tag">A JOURNEY THROUGH 2500 YEARS</div>
+
+        <h1>
+            سرزمین<br>
+            <span>تمدن و تاریخ</span>
+        </h1>
+
+        <p>
+            از شکوه امپراتوری هخامنشی تا ایران امروز؛
+            سفری در میان پادشاهان، تمدن‌ها، معماری،
+            فرهنگ و اتفاقاتی که تاریخ ایران را ساخته‌اند.
+        </p>
+
+        <a href="#history" class="gold-btn">شروع سفر تاریخی ←</a>
+    </div>
+
+    <!-- 3D SPHERE -->
+
+    <div class="scene">
+        <div class="orbit"></div>
+        <div class="orbit two"></div>
+
+        <div class="sphere">
+            <div class="building">
+                <div class="roof"></div>
+
+                <div class="columns">
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                </div>
+
+                <div class="stairs"></div>
+            </div>
+        </div>
+
+        <div class="sphere-label">PERSEPOLIS • 550 BC</div>
+    </div>
+
+</div>
+
+<!-- INTRO -->
+
+<section class="intro reveal">
+    <div class="section-title">
+        <small>ABOUT IRAN</small>
+        <h2>ایران؛ سرزمین تاریخ</h2>
+        <p>نگاهی به یکی از کهن‌ترین تمدن‌های جهان</p>
+    </div>
+
+    <div class="intro-grid">
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Persepolis_2019.jpg"
+        alt="تخت جمشید">
+
+        <div class="intro-text">
+            <h3>داستان یک تمدن بزرگ</h3>
+
+            <p>
+                ایران سرزمینی با پیشینه تاریخی چند هزار ساله است.
+                تمدن‌هایی مانند ایلام، ماد و هخامنشیان در شکل‌گیری
+                تاریخ این سرزمین نقش مهمی داشتند.
+                ایران در طول تاریخ شاهد امپراتوری‌های بزرگ،
+                پیشرفت‌های علمی، هنرهای معماری و تحولات فرهنگی
+                فراوان بوده است.
+                <br><br>
+                در این سفر تاریخی با مهم‌ترین دوره‌های ایران،
+                از دوران باستان تا زمان معاصر آشنا می‌شویم.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+
+<section id="history">
+
+    <div class="section-title">
+        <small>HISTORICAL TIMELINE</small>
+        <h2>خط زمانی تاریخ ایران</h2>
+        <p>از هخامنشیان تا دوران معاصر</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">حدود ۵۵۰ تا ۳۳۰ پیش از میلاد</div>
+                <h3>۱. امپراتوری هخامنشی</h3>
+                <p>
+                    کوروش بزرگ با پایه‌گذاری شاهنشاهی هخامنشی،
+                    یکی از بزرگ‌ترین امپراتوری‌های جهان باستان
+                    را ایجاد کرد. داریوش یکم ساختار اداری و
+                    اقتصادی امپراتوری را گسترش داد و ساخت
+                    تخت جمشید در این دوره آغاز شد.
+                    خشایارشا نیز از پادشاهان مشهور این سلسله بود.
+                    این امپراتوری در سال ۳۳۰ پیش از میلاد
+                    با حمله اسکندر مقدونی سقوط کرد.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Persepolis_2019.jpg" alt="تخت جمشید">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۳۳۰ تا حدود ۲۴۷ پیش از میلاد</div>
+                <h3>۲. سلوکیان</h3>
+                <p>
+                    پس از فتح ایران توسط اسکندر مقدونی،
+                    بخش بزرگی از سرزمین ایران تحت حکومت
+                    جانشینان او قرار گرفت. فرهنگ یونانی
+                    در کنار فرهنگ ایرانی گسترش یافت.
+                    این دوره زمینه‌ساز قدرت‌گیری اشکانیان شد.
+                </p>
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">حدود ۲۴۷ پیش از میلاد تا ۲۲۴ میلادی</div>
+                <h3>۳. امپراتوری اشکانی</h3>
+                <p>
+                    اشکانیان به رهبری ارشک حکومت خود را
+                    بنیان گذاشتند. این سلسله نزدیک به پنج قرن
+                    بر ایران حکومت کرد و در برابر امپراتوری
+                    روم قدرت مهمی به شمار می‌رفت.
+                    مهارت سواره‌نظام ایرانی در این دوره
+                    شهرت فراوان داشت.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Parthian_Shot.jpg" alt="هنر اشکانی">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۲۲۴ تا ۶۵۱ میلادی</div>
+                <h3>۴. امپراتوری ساسانی</h3>
+                <p>
+                    اردشیر بابکان بنیان‌گذار شاهنشاهی ساسانی بود.
+                    این دوره یکی از مهم‌ترین دوره‌های شکوفایی
+                    معماری، هنر، دانش و سازمان حکومتی در ایران
+                    باستان محسوب می‌شود. تاق کسری از آثار
+                    برجسته معماری این دوران است.
+                    حکومت ساسانی در قرن هفتم میلادی پایان یافت.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Taq_Kasra.jpg" alt="طاق کسری">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۶۵۱ تا حدود ۱۵۰۱ میلادی</div>
+                <h3>۵. ایران پس از ورود اسلام</h3>
+                <p>
+                    پس از پایان حکومت ساسانی، اسلام در ایران
+                    گسترش یافت. در قرن‌های بعد حکومت‌هایی مانند
+                    طاهریان، صفاریان، سامانیان، غزنویان،
+                    سلجوقیان، خوارزمشاهیان، ایلخانان و تیموریان
+                    در بخش‌هایی از ایران قدرت گرفتند.
+                    زبان و ادبیات فارسی در این دوران شکوفا شد.
+                    فردوسی، رودکی، خیام و مولانا از چهره‌های
+                    برجسته فرهنگ ایرانی در این دوره‌ها هستند.
+                </p>
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۱۵۰۱ تا ۱۷۳۶ میلادی</div>
+                <h3>۶. صفویان</h3>
+                <p>
+                    شاه اسماعیل یکم حکومت صفوی را بنیان گذاشت.
+                    در این دوره تشیع دوازده‌امامی مذهب رسمی
+                    کشور شد. ایران از نظر معماری، هنر،
+                    قالی‌بافی و تجارت پیشرفت کرد.
+                    در زمان شاه عباس بزرگ، اصفهان به یکی
+                    از زیباترین شهرهای منطقه تبدیل شد.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Naqsh-e_Jahan_Square_Isfahan.jpg" alt="میدان نقش جهان">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۱۷۳۶ تا ۱۷۹۶ میلادی</div>
+                <h3>۷. افشاریان و زندیان</h3>
+                <p>
+                    نادرشاه افشار در سال ۱۷۳۶ به پادشاهی رسید
+                    و حکومت افشاری را تشکیل داد.
+                    پس از او، کریم‌خان زند به قدرت رسید
+                    و دوران زندیه را آغاز کرد.
+                    شیراز در دوره کریم‌خان اهمیت ویژه‌ای پیدا کرد.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Karim_Khan_Citadel.jpg" alt="ارگ کریم خان">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۱۷۸۹ تا ۱۹۲۵ میلادی</div>
+                <h3>۸. قاجاریان</h3>
+                <p>
+                    سلسله قاجار با آقامحمدخان شکل گرفت
+                    و تهران پایتخت کشور شد.
+                    ایران در این دوره با تحولات سیاسی،
+                    جنگ‌های ایران و روسیه و تغییرات اجتماعی
+                    روبه‌رو شد.
+                    انقلاب مشروطه در سال ۱۹۰۶ میلادی
+                    نقطه عطفی در تاریخ سیاسی ایران بود.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Golestan_Palace_Tehran.jpg" alt="کاخ گلستان">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۱۹۲۵ تا ۱۹۷۹ میلادی</div>
+                <h3>۹. دوره پهلوی</h3>
+                <p>
+                    رضاشاه پهلوی در سال ۱۹۲۵ به سلطنت رسید.
+                    در این دوره ساخت راه‌آهن، دانشگاه تهران،
+                    گسترش آموزش نوین و تغییرات اداری
+                    و اقتصادی اتفاق افتاد.
+                    پس از او محمدرضاشاه پهلوی به سلطنت رسید.
+                    این دوره با انقلاب سال ۱۹۷۹ پایان یافت.
+                </p>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Azadi_Tower.jpg" alt="برج آزادی">
+            </div>
+        </div>
+
+        <div class="era reveal">
+            <div class="era-card">
+                <div class="era-date">۱۹۷۹ تا امروز</div>
+                <h3>۱۰. جمهوری اسلامی ایران</h3>
+                <p>
+                    انقلاب سال ۱۹۷۹ باعث پایان نظام سلطنتی
+                    و تشکیل جمهوری اسلامی شد.
+                    در سال‌های بعد، ایران جنگ هشت‌ساله
+                    با عراق را تجربه کرد.
+                    پس از جنگ، بازسازی کشور و گسترش
+                    زیرساخت‌ها ادامه یافت.
+                    ایران معاصر در حوزه‌های علمی،
+                    فناوری، فرهنگ، اقتصاد و سیاست
+                    با تحولات و چالش‌های مختلفی روبه‌رو بوده است.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- MONUMENTS -->
+
+<section class="monuments" id="monuments">
+
+    <div class="section-title">
+        <small>IRANIAN HERITAGE</small>
+        <h2>گنجینه آثار تاریخی ایران</h2>
+        <p>آثاری که داستان تمدن ایران را روایت می‌کنند</p>
+    </div>
+
+    <div class="monument-grid">
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Persepolis_2019.jpg" alt="تخت جمشید">
+            <div class="monument-content">
+                <h3>تخت جمشید</h3>
+                <p>
+                    مجموعه‌ای باشکوه از معماری هخامنشی
+                    در نزدیکی شیراز که ساخت آن در زمان
+                    داریوش یکم آغاز شد.
+                </p>
+            </div>
+        </div>
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tomb_of_Cyrus_the_Great.jpg" alt="آرامگاه کوروش">
+            <div class="monument-content">
+                <h3>آرامگاه کوروش بزرگ</h3>
+                <p>
+                    بنای تاریخی در پاسارگاد که به
+                    کوروش بزرگ، بنیان‌گذار شاهنشاهی
+                    هخامنشی، نسبت داده می‌شود.
+                </p>
+            </div>
+        </div>
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Taq_Kasra.jpg" alt="طاق کسری">
+            <div class="monument-content">
+                <h3>طاق کسری</h3>
+                <p>
+                    بنایی مشهور از معماری ساسانی
+                    که به خاطر طاق عظیم و شیوه
+                    ساخت متفاوتش شناخته می‌شود.
+                </p>
+            </div>
+        </div>
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Naqsh-e_Jahan_Square_Isfahan.jpg" alt="نقش جهان">
+            <div class="monument-content">
+                <h3>میدان نقش جهان</h3>
+                <p>
+                    میدان تاریخی اصفهان که در دوره
+                    صفوی ساخته شد و نمونه‌ای ارزشمند
+                    از معماری ایرانی است.
+                </p>
+            </div>
+        </div>
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Golestan_Palace_Tehran.jpg" alt="کاخ گلستان">
+            <div class="monument-content">
+                <h3>کاخ گلستان</h3>
+                <p>
+                    مجموعه‌ای تاریخی در تهران که
+                    معماری و هنر دوره قاجار را
+                    به نمایش می‌گذارد.
+                </p>
+            </div>
+        </div>
+
+        <div class="monument reveal">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Azadi_Tower.jpg" alt="برج آزادی">
+            <div class="monument-content">
+                <h3>برج آزادی</h3>
+                <p>
+                    نمادی مشهور در تهران که در سال
+                    ۱۹۷۱ ساخته شد و ترکیبی از
+                    عناصر معماری ایرانی و مدرن است.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRESENT -->
+
+<section class="present" id="today">
+
+    <div class="section-title">
+        <small>IRAN TODAY</small>
+        <h2>ایران در دنیای امروز</h2>
+    </div>
+
+    <p>
+        ایران امروز کشوری با تاریخ، فرهنگ و جغرافیای متنوع است.
+        از کوه‌های البرز و زاگرس تا سواحل خلیج فارس و دریای خزر،
+        از شهرهای تاریخی مانند اصفهان و شیراز تا کلان‌شهر تهران،
+        میراث گذشته همچنان بخشی از هویت فرهنگی این سرزمین است.
+        <br><br>
+        تاریخ ایران داستانی طولانی از تمدن‌ها، تغییرات،
+        فراز و نشیب‌ها و تلاش نسل‌های مختلف است.
+        شناخت این تاریخ به ما کمک می‌کند گذشته را بهتر
+        بشناسیم و تحولات امروز را درک کنیم.
+    </p>
+
+    <br><br>
+    <a href="#home" class="gold-btn">بازگشت به ابتدای تاریخ ↑</a>
+
+</section>
+
+<footer>
+    <p>
+        ساخته شده با <span>♥</span> برای معرفی تاریخ و تمدن ایران
+    </p>
+    <p style="margin-top:10px">
+        IRAN HISTORY | 550 BC — 2026
+    </p>
+</footer>
+
+<script>
+
+// Scroll reveal animation
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
